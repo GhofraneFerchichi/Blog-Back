@@ -1,5 +1,6 @@
 package com.roky.thunderspi.services;
 
+<<<<<<< HEAD
 import com.roky.thunderspi.entities.Course;
 import com.roky.thunderspi.entities.Project;
 
@@ -13,4 +14,7 @@ public interface ICourseService  {
     Course editCourses(Course course);
     void deleteCourses(Long idCourse);
 
+=======
+public interface ICourseService {
+>>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 }

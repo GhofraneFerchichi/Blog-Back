@@ -17,6 +17,11 @@ public interface ProductRepo extends JpaRepository<Product,Long> {
 
     public List<Product> findByCategory(CategoryProduct category);
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
    // @Modifying
    // @Query(value="delete from wishlist where product_id = :id",nativeQuery = true)
     //void removeFromWishListWhenIsSold(@Param("id") Long id);

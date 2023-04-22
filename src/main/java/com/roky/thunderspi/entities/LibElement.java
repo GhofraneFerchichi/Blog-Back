@@ -3,10 +3,17 @@ package com.roky.thunderspi.entities;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+<<<<<<< HEAD
 import javax.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
+=======
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+>>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 
 @Getter
 @Setter
@@ -22,6 +29,7 @@ public class LibElement {
     String fileType;
     Float rating;
     boolean isApproved;
+<<<<<<< HEAD
     @ManyToOne(cascade = CascadeType.PERSIST)
     LibCategory libCategory;
 
@@ -69,4 +77,6 @@ public class LibElement {
     public int hashCode() {
         return Objects.hash(id, name, fileType, rating, isApproved, libCategory, libElement, libFiles);
     }
+=======
+>>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 }

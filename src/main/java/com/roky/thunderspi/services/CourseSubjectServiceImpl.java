@@ -1,5 +1,6 @@
 package com.roky.thunderspi.services;
 
+<<<<<<< HEAD
 import com.roky.thunderspi.entities.CourseSubject;
 import com.roky.thunderspi.repositories.CourseSubjectRepo;
 import lombok.AllArgsConstructor;
@@ -39,4 +40,10 @@ public class CourseSubjectServiceImpl implements ICourseSubjectService {
         courseSubjectRepo.deleteById(id);
 
     }
+=======
+import org.springframework.stereotype.Service;
+
+@Service
+public class CourseSubjectServiceImpl {
+>>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 }

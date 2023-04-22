@@ -1,6 +1,9 @@
 package com.roky.thunderspi.entities;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonIgnore;
+=======
+>>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
@@ -9,7 +12,10 @@ import org.springframework.context.annotation.Lazy;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
+<<<<<<< HEAD
 import java.util.List;
+=======
+>>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 import java.util.Set;
 
 @Getter
@@ -83,8 +89,12 @@ public class User {
     @ManyToMany(mappedBy = "whoWhishesThisProduct")
     public Set<Product> productsWished;
 
+<<<<<<< HEAD
     @OneToMany(mappedBy = "user" )
     @JsonIgnore
     public List<Course> courses;
+=======
+
+>>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 
 }
