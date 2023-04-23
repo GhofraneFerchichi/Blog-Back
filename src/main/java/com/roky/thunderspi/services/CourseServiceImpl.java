@@ -1,6 +1,5 @@
 package com.roky.thunderspi.services;
 
-<<<<<<< HEAD
 import com.roky.thunderspi.entities.Course;
 import com.roky.thunderspi.entities.Project;
 import com.roky.thunderspi.repositories.CourseRepo;
@@ -43,10 +42,4 @@ public class CourseServiceImpl implements ICourseService{
     }
 
 
-=======
-import org.springframework.stereotype.Service;
-
-@Service
-public class CourseServiceImpl implements ICourseService{
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 }

@@ -63,11 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/orders/search/findByCustomerEmailOrderByDateCreatedDesc/**").permitAll()
                 .antMatchers("/favoriteProduct/**").permitAll()
                 .antMatchers("/api/reset/**").permitAll()
-<<<<<<< HEAD
                 .antMatchers("/**").permitAll()
-=======
-               // .antMatchers("/**").permitAll()
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
                 .anyRequest().authenticated();
         http.addFilterBefore(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(internalApiAuthenticationFilter(), JwtAuthorizationFilter.class);

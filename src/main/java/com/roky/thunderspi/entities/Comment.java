@@ -1,27 +1,5 @@
 package com.roky.thunderspi.entities;
 
-<<<<<<< HEAD
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
-import javax.persistence.*;
-
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
-@Entity
-@Table(name = "commentblog")
-public class Comment  {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String title;
-    String content;
-    String picture;
-
-=======
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -41,7 +19,7 @@ import java.util.Objects;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+    private Long id;
 
     @Column(columnDefinition = "text")
     private String content;
@@ -154,5 +132,4 @@ public class Comment {
                 ", post=" + postcom +
                 '}';
     }
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 }

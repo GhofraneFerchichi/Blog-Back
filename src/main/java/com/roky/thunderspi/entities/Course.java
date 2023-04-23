@@ -1,6 +1,5 @@
 package com.roky.thunderspi.entities;
 
-<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -24,28 +23,15 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Builder
-=======
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
-import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.LinkedHashSet;
-import java.util.Set;
-
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-<<<<<<< HEAD
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
         allowGetters = true)
-=======
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,7 +39,6 @@ public class Course {
     String name;
     String educationLevel;
     String length;
-<<<<<<< HEAD
     //@Column(name = "date_added")
     //LocalDate dateAdded;
     //LocalDate dateUpdated;
@@ -108,16 +93,10 @@ public class Course {
     public void setUser(User user) {
         this.user = user;
     }
-=======
-    LocalDate dateAdded;
-    LocalDate dateUpdated;
-    String courseLanguage;
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 
     @OneToMany(mappedBy = "course", cascade = {CascadeType.PERSIST, CascadeType.DETACH})
     private Set<Project> projects = new LinkedHashSet<>();
 
-<<<<<<< HEAD
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -133,6 +112,4 @@ public class Course {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
-=======
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 }

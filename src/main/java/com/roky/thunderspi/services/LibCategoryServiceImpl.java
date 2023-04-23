@@ -1,6 +1,5 @@
 package com.roky.thunderspi.services;
 
-<<<<<<< HEAD
 import com.roky.thunderspi.entities.LibCategory;
 import com.roky.thunderspi.repositories.LibCategoryrepo;
 import lombok.AllArgsConstructor;
@@ -37,7 +36,4 @@ public class LibCategoryServiceImpl implements ILibCategoryService{
         libCategoryrepo.deleteById(id);
 
     }
-=======
-public class LibCategoryServiceImpl {
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 }

@@ -8,16 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-<<<<<<< HEAD
-import org.springframework.stereotype.Service;
-
-=======
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 @Service
 public class AuthenticationService {
 
@@ -39,8 +34,6 @@ public class AuthenticationService {
 
         return signInUser;
     }
-<<<<<<< HEAD
-=======
     public Optional<org.springframework.security.core.userdetails.User> getCurrentUser() {
 
         org.springframework.security.core.userdetails.User principal = (org.springframework.security.core.userdetails.User)
@@ -48,5 +41,4 @@ public class AuthenticationService {
 
         return Optional.of(principal);
     }
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
 }

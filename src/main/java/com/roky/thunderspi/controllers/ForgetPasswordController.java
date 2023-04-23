@@ -52,11 +52,7 @@ public class ForgetPasswordController {
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
 
-<<<<<<< HEAD
         helper.setFrom("margoumik@gmail.com", "\n" +
-=======
-        helper.setFrom("eduuuhuuub@gmail.com", "\n" +
->>>>>>> 98f4b4a53f36d482972327191e0a2e175ed8fcaf
                 "Sakly Textile Support");
         helper.setTo(recipientEmail);
 
