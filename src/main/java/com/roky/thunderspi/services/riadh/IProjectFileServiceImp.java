@@ -3,6 +3,8 @@ package com.roky.thunderspi.services.riadh;
 
 import com.roky.thunderspi.entities.ProjectFile;
 import com.roky.thunderspi.repositories.riadh.ProjectFileRepository;
+import com.roky.thunderspi.repositories.riadh.ProjectRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -13,12 +15,17 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 @Service
+@RequiredArgsConstructor
 public class IProjectFileServiceImp implements IProjectFileService {
 
-    @Autowired
-    private ProjectFileRepository projectFileRepository;
 
-    public ProjectFile store(MultipartFile file ) throws IOException
+    private final ProjectFileRepository projectFileRepository;
+    private final ProjectRepository projectRepository;
+
+
+    //store Project File inside project
+    //seperate between project and projectSubmission
+    public ProjectFile store(MultipartFile file, Long projectId ) throws IOException
     {
         String filename = StringUtils.cleanPath(file.getOriginalFilename());
         ProjectFile projectFile = new ProjectFile(filename,file.getContentType(), file.getBytes());

@@ -4,6 +4,7 @@ package com.roky.thunderspi.services.riadh;
 import com.roky.thunderspi.entities.Quiz;
 import com.roky.thunderspi.repositories.riadh.QuizRepository;
 import com.roky.thunderspi.repositories.riadh.UserQuizTakeRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,12 +12,13 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class IQuizServiceImp implements IQuizService {
 
-    @Autowired
-    private QuizRepository quizRepository;
-    @Autowired
-    private UserQuizTakeRepository userQuizTakeRepository;
+
+    private final QuizRepository quizRepository;
+
+    private final UserQuizTakeRepository userQuizTakeRepository;
     @Override
     public Quiz getQuizById(Long id) {
         return quizRepository.findById(id).get();
@@ -51,4 +53,12 @@ public class IQuizServiceImp implements IQuizService {
     public Set<Quiz> getQuizByNumberOfTakes() {
         return null;
     }
+
+    @Override
+    public Set<Quiz> getQuizByCourse(Long id)
+    {
+        return quizRepository.findAll().stream().filter(q -> q.getCourse().getIdCourse().equals(id)).collect(Collectors.toSet());
+    }
+
+
 }

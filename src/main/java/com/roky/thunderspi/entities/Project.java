@@ -13,12 +13,37 @@ public class Project {
   private String name;
 
   private float maxMarks;
+
+  private String description;
+
+  private String labs;
+
+  // TODO add prerequisite courses links as attribute (should be a list of links retrieved from the front end i guess)
+
+
   @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
   private Set<ProjectFile> projectFiles = new LinkedHashSet<>();
 
   @ManyToOne
   @JoinColumn(name = "course_id_course")
   private Course course;
+
+  public String getLabs() {
+    return labs;
+  }
+
+  public void setLabs(String labs) {
+    this.labs = labs;
+  }
+
+  public Course getCourse() {
+    return course;
+  }
+
+  public void setCourse(Course course) {
+    this.course = course;
+  }
+
   @ManyToOne(cascade = CascadeType.DETACH)
   @JoinColumn(name = "teacher_id")
   private User user;
@@ -41,7 +66,7 @@ public class Project {
     this.maxMarks = maxMarks;
   }
 
-  private String description;
+
 
 
 

@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 public interface IProjectFileService {
-    public ProjectFile store(MultipartFile file ) throws IOException;
+    public ProjectFile store(MultipartFile file, Long projectid ) throws IOException;
 
     public ProjectFile getFile(Long id);
 

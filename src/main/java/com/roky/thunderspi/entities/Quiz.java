@@ -15,6 +15,22 @@ public class Quiz {
 
     private float maxMarks;
 
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Set<QuizCategory> getQuizCategories() {
+        return quizCategories;
+    }
+
+    public void setQuizCategories(Set<QuizCategory> quizCategories) {
+        this.quizCategories = quizCategories;
+    }
+
     @ManyToOne
     @JoinColumn(name = "course_id_course")
     private Course course;

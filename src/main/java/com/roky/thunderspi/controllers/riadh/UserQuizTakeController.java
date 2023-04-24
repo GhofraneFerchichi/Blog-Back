@@ -3,6 +3,7 @@ package com.roky.thunderspi.controllers.riadh;
 
 import com.roky.thunderspi.services.riadh.IUserQuizTakeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,4 +16,5 @@ public class UserQuizTakeController {
     Post
     Put
     Delete */
+
 }

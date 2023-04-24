@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/project")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequiredArgsConstructor
 public class ProjectController {
 
@@ -25,13 +26,13 @@ public class ProjectController {
     }
 
     @PostMapping
-    public void addProject(@RequestParam Project p)
+    public void addProject(@RequestBody Project p)
     {
         projectService.addProject(p);
     }
 
     @PutMapping
-    public void updateProject(@RequestParam Project p)
+    public void updateProject(@RequestBody Project p)
     {
         projectService.updateProject(p);
     }

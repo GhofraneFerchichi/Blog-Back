@@ -15,4 +15,6 @@ public interface IQuizService {
     public Set<Quiz> getQuizByTeacherId(Long id);
     public Set<Quiz> getQuizByNumberOfTakes();
 
+    public Set<Quiz> getQuizByCourse(Long id);
+
 }

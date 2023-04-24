@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/qstAns")
+@RequestMapping("/quiz/qstAns")
 @RequiredArgsConstructor
 public class QuestionAnswerController {
 

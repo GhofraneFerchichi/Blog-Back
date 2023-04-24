@@ -6,16 +6,28 @@ import com.roky.thunderspi.services.riadh.IQuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Set;
+
 @RestController
 @RequestMapping("/quiz")
 @RequiredArgsConstructor
 public class QuizController {
     private final IQuizService quizService;
 
-    //TODO getAll
+    @GetMapping
+    public Set<Quiz> getAllQuizzes()
+    {
+        return quizService.getAllQuiz();
+    }
+
+    @GetMapping("{/course/{id}")
+    public Set<Quiz> getQuizByCourse(@PathVariable Long courseId)
+    {
+        return quizService.getQuizByCourse(courseId);
+    }
 
     @GetMapping("/{id}")
-    public Quiz getQuiz(Long id)
+    public Quiz getQuiz(@PathVariable Long id)
     {
         return quizService.getQuizById(id);
     }
@@ -37,5 +49,7 @@ public class QuizController {
     {
         quizService.deleteQuiz(id);
     }
+
+
 
 }

@@ -45,4 +45,9 @@ public class IQuestionServiceImp implements IQuestionService {
     public Question addQuestion(Question q) {
         return questionRepository.save(q);
     }
+
+    @Override
+    public Set<Question> getQuestionByQuizId(Long quizId) {
+        return null;
+    }
 }

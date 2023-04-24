@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/qst")
+@RequestMapping("/quiz/qst")
 @RequiredArgsConstructor
 public class QuestionController {
     private final IQuestionService questionService;
@@ -23,6 +23,12 @@ public class QuestionController {
     public Question getById(@PathVariable Long id)
     {
         return questionService.getQuestionById(id);
+    }
+
+    @GetMapping("/quiz/{id}/question")
+    public Set<Question> getQuestionByQuizId(@PathVariable Long quizId)
+    {
+        return null;
     }
 
     @PostMapping

@@ -29,12 +29,14 @@ public class ProjectFIleController {
 
     private final IProjectService IProjectServiceImp;
 
-    @PostMapping("upload")
-    public ResponseEntity<ResponseMessage> uploadProjectFile(@RequestParam("file")MultipartFile file)
+
+
+    @PostMapping("/upload")
+    public ResponseEntity<ResponseMessage> uploadProjectFile(@RequestParam("file")MultipartFile file, Long projectid)
     {
         String message = "";
         try {
-            projectFileService.store(file);
+            projectFileService.store(file, projectid);
 
             message = "Uploaded File successfully: " + file.getOriginalFilename();
             return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
