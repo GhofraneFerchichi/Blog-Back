@@ -2,10 +2,11 @@ package com.roky.thunderspi.services;
 
 import com.roky.thunderspi.dto.PostDto;
 import com.roky.thunderspi.entities.Post;
+import com.roky.thunderspi.entities.User;
 import com.roky.thunderspi.exception.PostNotFoundException;
 import com.roky.thunderspi.repositories.PostRepo;
+import com.roky.thunderspi.security.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -24,18 +25,19 @@ public class BlogPostServiceImpl implements IBlogPostService {
     @Autowired
     private AuthenticationService authenticationService;
 
-    public void createPost(PostDto postDto){
+    public void createPost(Post postDto){
         Post post = new Post();
         post.setTitle(postDto.getTitle());
         post.setContent(postDto.getContent());
-        User userName =  authenticationService.getCurrentUser().orElseThrow(
+        /*com.roky.thunderspi.entities.User user =  authenticationService.getCurrentUser().orElseThrow(
                 ()->new IllegalArgumentException("No user logged in"));
-        post.setUserName(userName.getUsername());
+        post.setUserName(user.getFname());*/
         post.setCreated_At(Instant.now());
 
         postRepository.save(post);
 
     }
+
 
     public List<PostDto> showAllPosts() {
         List<Post> posts = postRepository.findAll();
@@ -84,7 +86,7 @@ public class BlogPostServiceImpl implements IBlogPostService {
         post.setContent(postDto.getContent());
         User loggedInUser = authenticationService.getCurrentUser().orElseThrow(() -> new IllegalArgumentException("User not found"));
         post.setCreated_At(Instant.now());
-        post.setUserName(loggedInUser.getUsername());
+        post.setUserName(loggedInUser.getFname());
         post.setUpdated_At(Instant.now());
 
         return post;

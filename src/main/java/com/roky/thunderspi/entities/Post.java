@@ -35,6 +35,9 @@ public class Post {
     private String content;
 
 
+    Long idFile;
+    String fileType;
+    String fileName;
     private String image;
 
     @Column
@@ -46,12 +49,11 @@ public class Post {
     @Column(nullable = true)
     private Date deleted_at;
 
-    @ManyToOne
-    private User user;
 
     @Column
     @NotBlank
     private String userName;
+
     @OneToMany(mappedBy = "postcom")
     private List<Comment> comments = new ArrayList<Comment>();
 
@@ -68,6 +70,11 @@ public class Post {
         this.image = image;
         this.user = user;
     }
+
     @ManyToOne
     private Actuality actuality;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

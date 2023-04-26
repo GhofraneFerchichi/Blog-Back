@@ -16,13 +16,5 @@ public class PostDto {
     private String content;
     private String title;
     private String userName;
-    private String image;
-    private User user;
-    private Set<Comment> comments;
-    private String created_at;
-    private String updated_at;
-
-
-
-
+   // private String Image;
 }

@@ -34,11 +34,21 @@ public class AuthenticationService {
 
         return signInUser;
     }
-    public Optional<org.springframework.security.core.userdetails.User> getCurrentUser() {
+    public Optional<User> getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        org.springframework.security.core.userdetails.User principal = (org.springframework.security.core.userdetails.User)
-                SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return Optional.empty();
+        }
 
-        return Optional.of(principal);
+        Object principal = authentication.getPrincipal();
+
+        if (!(principal instanceof User)) {
+            return Optional.empty();
+        }
+
+        return Optional.of((User) principal);
     }
+
+
 }

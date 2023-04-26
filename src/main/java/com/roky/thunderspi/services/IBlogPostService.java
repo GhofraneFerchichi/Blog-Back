@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IBlogPostService {
 
-    void createPost(PostDto postDto);
+    void createPost(Post postDto);
 
 
     List<PostDto> showAllPosts();

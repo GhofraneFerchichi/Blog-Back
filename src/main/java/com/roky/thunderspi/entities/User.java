@@ -1,5 +1,6 @@
 package com.roky.thunderspi.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
@@ -53,6 +54,8 @@ public class User {
     private Role role;
 
     @Transient
+    @JsonIgnore
+
     private String token;
 
     @Column(name = "verification_code", length = 64)
